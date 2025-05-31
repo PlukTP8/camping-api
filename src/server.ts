@@ -12,6 +12,10 @@ const PORT = process.env.PORT
 app.use(cors())
 app.use(bodyParser.json())
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+});
+
 app.use('/users', userRoutes)
 
 app.listen(PORT, () => {
