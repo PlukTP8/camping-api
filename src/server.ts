@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import userRoutes from './routes/user.routes'
+import authRoutes from './routes/auth.route'
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
+app.use('/auth', authRoutes)
 app.use('/users', userRoutes)
 
 app.listen(PORT, () => {
