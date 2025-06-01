@@ -5,7 +5,7 @@ const db_1 = require("../config/db");
 const getUsers = async (req, res) => {
     try {
         const result = await db_1.pool.query(`
-      SELECT users.id, users.username, users.status, roles.name AS role_name
+      SELECT users.id, users.username, users.password, users.status, roles.name AS role_name
       FROM users
       LEFT JOIN roles ON users.role_id = roles.id
     `);

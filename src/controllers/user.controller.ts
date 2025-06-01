@@ -4,7 +4,7 @@ import { pool } from '../config/db'
 export const getUsers = async (req: Request, res: Response) => {
   try {
     const result = await pool.query(`
-      SELECT users.id, users.username, users.status, roles.name AS role_name
+      SELECT users.id, users.username, users.password, users.status, roles.name AS role_name
       FROM users
       LEFT JOIN roles ON users.role_id = roles.id
     `)
