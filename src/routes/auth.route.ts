@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post('/login', async (req: Request, res: Response) => {
   try {
+    console.log("🔐 POST /auth/login called");
     await login(req, res);
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });

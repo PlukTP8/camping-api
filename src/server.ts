@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-app.use('/auth', authRoutes)
 app.use('/users', userRoutes)
+app.use('/auth', authRoutes)
 
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`)
